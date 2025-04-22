@@ -2,10 +2,13 @@ import tkinter as tk
 from tkinter import ttk, messagebox
 
 #def=função , a função é um bloco de código, que aguarda o usuário chamar por ele
-def carregar_pets():
+def carregar_pets(pets_list=None):
     for item in tree.get_children():
         tree.delete(item)
-    for pet in pets:
+
+    pets_to_load = pets_list if pets_list is not None else pets
+
+    for pet in pets_to_load:
         tree.insert('', 'end', values=(
             pet['id'],
             pet['tutor'],
@@ -121,6 +124,24 @@ def remover_pet():
         limpar_campos()
         carregar_pets()
 
+def pesquisar_por_tutor():
+    termo_pesquisa = entry_tutor.get().lower()
+
+    if not termo_pesquisa:
+        carregar_pets()
+        return
+    
+    pets_encontrados = [pet for pet in pets
+        if termo_pesquisa in pet['tutor'].lower()]
+    
+    if not pets_encontrados:
+        messagebox.showinfo("Pesquisa", "Nenhum pet encontrado para este tutor")
+        carregar_pets()
+    else:
+        carregar_pets(pets_encontrados)    
+
+
+
 
 # Dados em memória
 pets = []  #array = lista
@@ -171,6 +192,9 @@ btn_remover.grid(row=0, column=2, padx=5)
 
 btn_limpar = ttk.Button(frame_botoes, text="Limpar", command=limpar_campos)
 btn_limpar.grid(row=0, column=3, padx=5)
+
+btn_pesquisar = ttk.Button(frame_botoes, text="Pesquisar", command=pesquisar_por_tutor)
+btn_pesquisar.grid(row=0, column=4, padx=5)
 
 # Tabela de pets
 frame_tabela = ttk.Frame(root)
