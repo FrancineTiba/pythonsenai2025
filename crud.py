@@ -1,5 +1,30 @@
 import tkinter as tk
-from tkinter import ttk, messagebox
+from tkinter import ttk, messagebox, filedialog
+
+#Salvar a lista, banco de dados permanete
+import json #Import necessário 
+
+def salvar_para_json():
+    if not pets:
+        messagebox.showwarning("Aviso", "Não há pets !")
+        return
+    
+#Abre a janela para selecionar onde salvar o arquivo
+    arquivo = filedialog.asksaveasfilename(defaultextension=".jason", filetypes=[("Arquivos JSON", "*json")], title="Salvar lista d pets como JSON")
+
+    if not arquivo: #Se o usuário cancelar
+        return
+    
+    try:   
+        with open (arquivo, 'w', encoding='utf-8')as f:
+            json.dump(pets, f, ensure_ascii=False, indent=4)
+
+
+        messagebox.showinfo("Sucesso", f"Dados salvos com sucesso em: \n{arquivo}")
+    except Exception as e:
+        messagebox.showerror("Erro", f"Ocorreu um erro ao salvar:\n{str(e)}")
+
+
 
 #def=função , a função é um bloco de código, que aguarda o usuário chamar por ele
 def carregar_pets(pets_list=None):
@@ -195,6 +220,9 @@ btn_limpar.grid(row=0, column=3, padx=5)
 
 btn_pesquisar = ttk.Button(frame_botoes, text="Pesquisar", command=pesquisar_por_tutor)
 btn_pesquisar.grid(row=0, column=4, padx=5)
+
+btn_salvar = ttk.Button(frame_botoes, text="Salvar", command=salvar_para_json)
+btn_salvar.grid(row=0, column=5, padx=5)
 
 # Tabela de pets
 frame_tabela = ttk.Frame(root)
