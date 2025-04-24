@@ -4,13 +4,43 @@ from tkinter import ttk, messagebox, filedialog
 #Salvar a lista, banco de dados permanete
 import json #Import necessário 
 
+def carregar_de_json():
+    global pets, next_pet_id
+    
+    arquivo = filedialog.askopenfilename(
+        filetypes=[("Arquivos JSON", "*.json")],
+        title="Selecionar arquivo JSON para carregar"
+    )
+    
+    if not arquivo:  # Se o usuário cancelar
+        return
+    
+    try:
+        with open(arquivo, 'r', encoding='utf-8') as f:
+            pets_carregados = json.load(f)
+        
+        # Atualiza a lista de pets e o próximo ID
+        pets = pets_carregados
+        if pets:
+            next_pet_id=max(pet['id'] for pet in pets)+1
+        else:
+            next_pet_id = 1
+            
+        carregar_pets(pets)
+        messagebox.showinfo("Sucesso", 
+           f"Dados carregados com sucesso de:\n{arquivo}")
+    except Exception as e:
+        messagebox.showerror("Erro", 
+            f"Ocorreu um erro ao carregar:\n{str(e)}")
+
+
 def salvar_para_json():
     if not pets:
         messagebox.showwarning("Aviso", "Não há pets !")
         return
     
 #Abre a janela para selecionar onde salvar o arquivo
-    arquivo = filedialog.asksaveasfilename(defaultextension=".jason", filetypes=[("Arquivos JSON", "*json")], title="Salvar lista d pets como JSON")
+    arquivo = filedialog.asksaveasfilename(defaultextension=".json", filetypes=[("Arquivos JSON", "*.json")], title="Salvar lista d pets como JSON")
 
     if not arquivo: #Se o usuário cancelar
         return
@@ -223,6 +253,9 @@ btn_pesquisar.grid(row=0, column=4, padx=5)
 
 btn_salvar = ttk.Button(frame_botoes, text="Salvar", command=salvar_para_json)
 btn_salvar.grid(row=0, column=5, padx=5)
+
+btn_carregar = ttk.Button(frame_botoes, text="Carregar de JSON", command=carregar_de_json)
+btn_carregar.grid(row=0, column=6, padx=5)
 
 # Tabela de pets
 frame_tabela = ttk.Frame(root)
