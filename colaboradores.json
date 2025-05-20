@@ -1,0 +1,58 @@
+{
+    "37131174890": {
+        "cpf": "37131174890",
+        "nome": "Francine Steffannie Tiba",
+        "data_nascimento": "03/05/1986",
+        "sexo": "Feminino",
+        "endereco": "Avenid Duque de Caxias 134",
+        "telefone": "16981838261",
+        "email": "francine_tiba@hotmail.com",
+        "experiencia": [
+            "Rh e Departamento Pessoal"
+        ],
+        "data_cadastro": "20/05/2025 19:23:28",
+        "data_atualizacao": "20/05/2025 19:23:28"
+    },
+    "31171817843": {
+        "cpf": "31171817843",
+        "nome": "Francisco S Uribe Junior",
+        "data_nascimento": "17/11/1982",
+        "sexo": "Masculino",
+        "endereco": "Rua Bahia 2790",
+        "telefone": "16997152829",
+        "email": "uribe_junior@hotmail.com",
+        "experiencia": [
+            "instrutor de transito, sushiman, operador de máquina"
+        ],
+        "data_cadastro": "20/05/2025 19:26:00",
+        "data_atualizacao": "20/05/2025 19:26:00"
+    },
+    "12345678911": {
+        "cpf": "12345678911",
+        "nome": "Maria Vitoria Silva de Moura",
+        "data_nascimento": "26/05/2003",
+        "sexo": "Feminino",
+        "endereco": "Rua Aryemir Gualtieri 75",
+        "telefone": "16997212223",
+        "email": "mv_moura@gmail.com",
+        "experiencia": [
+            "Babá, atendente de loja."
+        ],
+        "data_cadastro": "20/05/2025 19:30:23",
+        "data_atualizacao": "20/05/2025 19:30:23"
+    },
+    "23681332875": {
+        "cpf": "23681332875",
+        "nome": "Karoline Aya Uribe",
+        "data_nascimento": "11/07/2008",
+        "sexo": "Feminino",
+        "endereco": "Rua Bahia 2791",
+        "telefone": "16988631668",
+        "email": "aya.uribe@gmail.com",
+        "experiencia": [
+            "Estudante"
+        ],
+        "data_cadastro": "20/05/2025 19:34:48",
+        "data_atualizacao": "20/05/2025 19:34:48"
+    }
+}
