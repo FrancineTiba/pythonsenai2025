@@ -1,0 +1,206 @@
+Aula - JANELA.PY (Ambiente Gráfico)
+
+import tkinter 
+
+root = tkinter.Tk()
+root.title("Senai")
+root.geometry("800x600")
+
+labelFrase = tkinter.Label(root,
+                           text='Olá, Developer!',
+                           font=('Magneto',72),
+                           fg='#FF97CF',
+                           bg='lightblue')
+labelFrase.pack(padx=5,pady=5)
+
+labelNome = tkinter.Label(root,
+                          text='Digite seu nome:',
+                          font=('Lucida Calligraphy',25),
+                          fg='#6B3FA0')
+labelNome.pack(padx=5,pady=5)
+
+entryNome = tkinter.Entry(root,width=50,
+                          font=('Verdana',22))
+entryNome.pack(padx=5,pady=5)
+
+buttonGravar = tkinter.Button(root,text="Gravar",
+                              command=None)
+buttonGravar.pack(padx=5,pady=5)
+
+
+
+root.mainloop()
+
+***************************************************
+
+03/04/2025
+
+Print = Label
+Input = Entry
+Pack = coloca um objeto embaixo do outro, o número do padx/pady, é oespaço que da para não grudar um objeto no outro.
+justfy='' (Escolhe se quer a esquerda/direita)
+********************************************
+
+import tkinter as tk
+
+janela = tk.Tk() # desenha uma janela 
+janela.title("WinCalc - A Super Calculadora")
+janela.geometry('800x600')
+
+lblTitulo = tk.Label(janela,
+                     text='WinCalc',
+                     font=('Old English Text MT',32))
+
+lblTitulo.pack(padx=5,pady=5)
+
+
+
+
+janela.mainloop() #mantem o programa rodando, sempre no final do código
+
+**************************************
+
+import tkinter as tk
+
+janela = tk.Tk() # desenha uma janela 
+janela.title("WinCalc - A Super Calculadora")
+janela.geometry('800x600')
+
+lblTitulo = tk.Label(janela,
+                     text='WinCalc',
+                     font=('Pristina',70),
+                     fg='White',
+                     bg='Blue',
+                     width=800)
+lblTitulo.pack(padx=5,pady=5)
+
+lblNumero1 = tk.Label(janela,
+                      text='Digite um número:',
+                      font=('Calibri',30))
+lblNumero1.pack(padx=5,pady=5)
+
+entryNumero1 = tk.Entry(janela,
+                        width=800,
+                        font=('Calibri',32))
+entryNumero1.pack(padx=5,pady=5)
+
+lblNumero2 = tk.Label(janela,
+                      text='Digite outro número:',
+                      font=('Calibri',30))
+lblNumero2.pack(padx=5,pady=5)
+
+entryNumero2 = tk.Entry(janela,
+                        width=800,
+                        font=('Calibri',32))
+entryNumero2.pack(padx=5,pady=5)
+
+
+
+
+
+janela.mainloop() #mantem o programa rodando, sempre no final do código
+************************************
+
+import tkinter as tk
+
+def fnAdicao():
+    x = float(entryNumero1.get())
+    y = float(entryNumero2.get())
+    resultado = x + y
+    lblResultado.config(text=f'A soma é {resultado}')
+
+def fnSubtracao():
+    x = float(entryNumero1.get())
+    y = float(entryNumero2.get())
+    resultado = x - y
+    lblResultado.config(text=f'A subtração é {resultado}')
+
+def fnMultiplicacao():
+    x = float(entryNumero1.get())
+    y = float(entryNumero2.get())
+    resultado = x * y
+    lblResultado.config(text=f'A multiplicação é {resultado}')        
+
+def fnDivisao():
+    x = float(entryNumero1.get())
+    y = float(entryNumero2.get())
+    resultado = x / y
+    lblResultado.config(text=f'A divisão é {resultado}')          
+
+janela = tk.Tk() # desenha uma janela 
+janela.title("WinCalc - A Super Calculadora")
+janela.geometry('800x650')
+
+lblTitulo = tk.Label(janela,
+                     text='WinCalc',
+                     font=('Pristina',66),
+                     fg='White',
+                     bg='Blue',
+                     width=800)
+lblTitulo.pack(padx=5,pady=5)
+
+lblNumero1 = tk.Label(janela,
+                      text='Digite um número:',
+                      font=('Calibri',24))
+lblNumero1.pack(padx=5,pady=5)
+
+entryNumero1 = tk.Entry(janela,
+                        width=800,
+                        font=('Calibri',24))
+entryNumero1.pack(padx=5,pady=5)
+
+lblNumero2 = tk.Label(janela,
+                      text='Digite outro número:',
+                      font=('Calibri',24))
+lblNumero2.pack(padx=5,pady=5)
+
+entryNumero2 = tk.Entry(janela,
+                        width=800,
+                        font=('Calibri',24))
+entryNumero2.pack(padx=5,pady=5)
+
+btnAdicao = tk.Button(janela,
+                      text='Adição',
+                      font=('Calibri',16),
+                      width=800,
+                      command=fnAdicao)
+btnAdicao.pack(padx=5,pady=5)
+
+btnSubtracao = tk.Button(janela,
+                      text='Subtração',
+                      font=('Calibri',16),
+                      width=800,
+                      command=fnSubtracao)
+btnSubtracao.pack(padx=5,pady=5)
+
+btnMultiplicacao = tk.Button(janela,
+                      text='Multiplicação',
+                      font=('Calibri',16),
+                      width=800,
+                      command=fnMultiplicacao)
+btnMultiplicacao.pack(padx=5,pady=5)
+
+btnDivisao = tk.Button(janela,
+                      text='Divisão',
+                      font=('Calibri',16),
+                      width=800,
+                      command=fnDivisao)
+btnDivisao.pack(padx=5,pady=5)
+
+lblResultado = tk.Label(janela,
+                        text='0.00',
+                        font=('Calibri', 22))
+lblResultado.pack(padx=5,pady=5)
+
+
+janela.mainloop() #mantem o programa rodando, colocar sempre no final do código
+
+***************************************
+
+Agora você está atuando como desenvolvedor de jogos.
+Crie um jogo de adivinhação de palavras onde você irá sortear uma palavra aleatória e o jogador terá 3 chances de acertar. Antes de cada tentativa do jogador você irá mostrar uma dica sobre a palavra. Se ele acertar ou não acertar em 3 tentativas, pergunte se ele quer outra palavra ou terminar o jogo. Desenvolva em Python utilizando pyGame.
+
+
+pip instal pyGame (No final do código)
+************************************
+
