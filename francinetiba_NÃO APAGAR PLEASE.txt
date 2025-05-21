@@ -1,0 +1,338 @@
+Média notas
+
+nota1 = float(input("Digite a nota do 1º Bimestre: "))
+nota2 = float(input("Digite a nota do 2º Bimestre: "))
+nota3 = float(input("Digite a nota do 3º Bimestre: "))
+nota4 = float(input("Digite a nota do 4º Bimestre: "))
+
+media = (nota1 + nota2 + nota3 + nota4)/4
+
+print("A média final é,", media)
+
+***********************************************************
+F String
+
+nota1 = float(input("Digite a nota do 1º Bimestre: "))
+nota2 = float(input("Digite a nota do 2º Bimestre: "))
+nota3 = float(input("Digite a nota do 3º Bimestre: "))
+nota4 = float(input("Digite a nota do 4º Bimestre: "))
+
+media = (nota1 + nota2 + nota3 + nota4)/4
+
+print(f"A média final é {media:,.2f}")
+
+#Nesse codigo a estrutura de formatação chama fString
+
+***********************************************************
+
+Condicional
+
+Para que o Python acesse um bloco de código, necessário 4 espaços
+
+nota1 = float(input("Digite a nota do 1º Bimestre: "))
+nota2 = float(input("Digite a nota do 2º Bimestre: "))
+nota3 = float(input("Digite a nota do 3º Bimestre: "))
+nota4 = float(input("Digite a nota do 4º Bimestre: "))
+
+media = (nota1 + nota2 + nota3 + nota4)/4
+
+print(f"Sua média é {media:,.2f}")
+
+if (media >= 5):
+    print("Aluno A P R O V A D O !!!")
+else:
+    print("Aluno R E P R O V A D O !!!")    
+
+print("Fim do ano letivo !") 
+
+#Sem os 4 espaços, está fora da condicional, portando irá aparecer, independente da condicional.
+
+************************************************************
+
+SE FOSSE JAVA
+
+nota1 = float(input("Digite a nota do 1º Bimestre: "))
+nota2 = float(input("Digite a nota do 2º Bimestre: "))
+nota3 = float(input("Digite a nota do 3º Bimestre: "))
+nota4 = float(input("Digite a nota do 4º Bimestre: "))
+
+media = (nota1 + nota2 + nota3 + nota4)/4
+
+print(f"Sua média é {media:,.2f}")
+
+if (media >= 5):
+{
+    print("Aluno A P R O V A D O !!!")
+}
+else:
+{
+    print("Aluno R E P R O V A D O !!!")   
+} 
+
+print("Fim do ano letivo !") 
+
+
+*************************************************************
+
+nota1 = float(input("Digite a nota do 1º Bimestre: "))
+nota2 = float(input("Digite a nota do 2º Bimestre: "))
+nota3 = float(input("Digite a nota do 3º Bimestre: "))
+nota4 = float(input("Digite a nota do 4º Bimestre: "))
+
+media = (nota1 + nota2 + nota3 + nota4)/4
+
+print(f"Sua média é {media:,.2f}")
+
+if (media >= 5):
+    print("Aluno A P R O V A D O !!!")
+elif (media >= 3):
+    print("Aluno em Recuperação")    
+else:
+    print("Aluno R E P R O V A D O !!!")    
+
+print("Fim do ano letivo !")
+
+***A sequencia é: IF - ELIF - ELSE
+***IF e ELSE, apenas um no bloco de código, ELIF pode ter vários no mesmo bloco.
+***Pode ter tbm dois ELIF e não ter o ELSE
+
+if (media >= 5):
+    print("Aluno A P R O V A D O !!!")
+elif (media >= 3):
+    print("Aluno em Recuperação")    
+elif (media < 3)
+    print("Aluno R E P R O V A D O !!!")    
+
+
+******************************************************
+
+VALIDAÇÃO / CONDIÇÃO
+
+***Não pode ser nota maior que 10
+
+***WHILE - executa enquanto a condição não for verdadeira
+
+while True: 
+    nota1 = float(input("Digite a nota do 1º Bimestre: "))
+    if nota1 <= 10 and nota1 > 0:
+        break 
+
+while True:
+    nota2 = float(input("Digite a nota do 2º Bimestre: "))
+    if nota2 <= 10 and nota1 > 0:
+        break
+
+while True:
+    nota3 = float(input("Digite a nota do 3º Bimestre: "))
+    if nota3 <= 10 and nota1 > 0:
+        break
+
+while True:   
+    nota4 = float(input("Digite a nota do 4º Bimestre: "))
+    if nota4 <= 10 and nota1 > 0:
+        break
+
+media = (nota1 + nota2 + nota3 + nota4)/4
+
+print(f"Sua média é {media:,.2f}")
+
+if (media >= 5):
+    print("Aluno A P R O V A D O !!!")
+elif (media >= 3):
+    print("Aluno em Recuperação")    
+else:
+    print("Aluno R E P R O V A D O !!!")    
+
+print("Fim do ano letivo !")
+
+********************************************************
+
+def PedirNota(frase):
+    while True:
+        nota = float(input(frase))
+        if nota >= 0 and nota <= 10:
+            break
+    return nota
+    
+nota1bim = PedirNota("Digite a nota do 1º Bimestre: ")
+nota2bim = PedirNota("Digite a nota do 2º Bimestre: ")
+nota3bim = PedirNota("Digite a nota do 3º Bimestre: ")
+nota4bim = PedirNota("Digite a nota do 4º Bimestre: ")
+
+media = (nota1bim+nota2bim+nota3bim+nota4bim) / 4
+print(f"Sua média é {media:,.2f}")
+
+if media >= 5:
+    print("Aluno Aprovado!")
+elif media >= 3:
+    print("Aluno em Recuperação") 
+else:
+    print("Aluno Reprovado!")  
+
+****************************************************
+
+#Montar um programa que solicite 3 preços de um produto. O sistema deverá calcular a média dos preços. Os valores digitados não poderão ser valores negativos.
+
+def PedirPreco(frase):
+    while True:
+        preco = float(input(frase))
+        if preco >= 0:
+            break
+    return preco
+    
+preco1 = PedirPreco("Digite o preço do 1º Produto: ")
+preco2 = PedirPreco("Digite o preço do 2º Produto: ")
+preco3 = PedirPreco("Digite o preço do 3º Produto: ")
+
+
+mediaPreco = (preco1+preco2+preco3) / 3
+print(f"A média de preços é {mediaPreco:,.2f}")
+
+***************************************************
+
+#Montar um programa que solicite 3 preços de um produto. O sistema deverá calcular a média dos preços. Os valores digitados não poderão ser valores negativos.
+
+while True: 
+    preco1 = float(input("Digite o valor do 1º Produto: "))
+    if (preco1 >= 0):
+        break 
+
+while True: 
+    preco2 = float(input("Digite o valor do 2º Produto: "))
+    if (preco2 >= 0):
+        break     
+
+while True: 
+    preco3 = float(input("Digite o valor do 3º Produto: "))
+    if (preco3 >= 0):
+        break     
+
+mediaPreco = (preco1+preco2+preco3) / 3
+print(f"A média de preços dos produtos é: {mediaPreco:,.2f}")
+
+
+***************************************************
+num = int(input("Digite um número para saber a tabuada : "))
+ 
+while num <= 10:
+    i = 1
+    while i <= num:
+        product = num*i
+        print(num, " * ", i, " = ", product, "\n")
+        i = i + 1
+    print("\n")
+    
+    num = num + 1
+**********************************************************
+
+#Montar um programa, utilizando o while, que monte a tabuada do 2.
+
+num = int(input("Digite um número= "))
+i = 1
+
+while i<=10:
+    print(num, "X", i, "=", num * i)
+    i = i+1
+
+**************************************************
+#Montar um programa, utilizando o while, que monte a tabuada do 2.
+
+i = 1
+
+while i<=10:
+    print(2, "X", i, "=", 2 * i)
+    i = i+1
+
+***********************************************
+
+#Montar um programa, utilizando o while, que monte a tabuada do 2.
+
+tabuada = 2
+contador = 1
+while contador <=10:
+    print(f'{tabuada} X {contador} = {tabuada*contador}')
+    contador = contador + 1
+
+*********************************************
+
+#Montar um programa, utilizando o while, que monte a tabuada do 2 ao 10.
+
+tabuada = 2
+contador = 1
+while tabuada <=10:
+    
+    print(f'{tabuada} X {contador} = {tabuada*contador}')
+    contador = contador + 1
+    if contador == 11:
+        tabuada = tabuada + 1
+        contador = 1    
+        print("")       
+
+***********************************************
+
+#Montar um programa, utilizando o for, que monte a tabuada do 2 ao 10.
+
+for tabuada in range(11):
+    for contador in range(11):  
+        print(f'{tabuada} X {contador} = {tabuada*contador}')
+    **********************************************
+lista = ['MARIA','PAULO','JOAO','PEDRO','MARTA']
+
+for nome in lista:
+    print(f'Olá {nome}, tudo bem?')
+
+**************************************************
+01/04/2025
+
+Biblioteca Python
+TKINTER
+
+import tkinter 
+
+root = tkinter.Tk()
+root.title("Hello World gráfico")
+root.geometry("800x600")
+
+root.mainloop()
+
+****************************************
+
+import tkinter 
+
+root = tkinter.Tk()
+root.title("Senai")
+root.geometry("800x600")
+
+labelFrase = tkinter.Label(root,
+                           text='Olá, Developer!',
+                           font=('Magneto',62),
+                           fg='#FF97CF',
+                           bg='lightblue')
+labelFrase.pack(padx=5,pady=5)
+
+labelNome = tkinter.Label(root,
+                          text='Digite seu nome:',
+                          font=('Lucida Calligraphy',25),
+                          fg='#6B3FA0')
+labelNome.pack(padx=5,pady=5)
+
+entryNome = tkinter.Entry(root,width=50,
+                          font=('Verdana',22))
+entryNome.pack(padx=5,pady=5)
+
+buttonGravar = tkinter.Button(root,text="Gravar",command=None)
+buttonGravar.pack(padx=5,pady=5)
+
+
+
+root.mainloop()
+
+********************************************
+
+123.123.123-87
+123.456.789-10
+
+*******************************************
+
+
+
